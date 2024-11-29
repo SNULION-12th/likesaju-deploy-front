@@ -17,7 +17,7 @@ const useChatWebSocket = () => {
     fetchData();
   }, [chatRoomId]);
 
-  const socketUrl = `ws://${REMOTE_URL}:8000`;
+  const socketUrl = `ws://${REMOTE_URL}:8000/ws/chat/`;
 
   const [reconnectionAttempt, setReconnectionAttempt] = useState(0);
   const maxConnectionAttempts = 4;
