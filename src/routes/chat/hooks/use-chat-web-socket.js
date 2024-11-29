@@ -1,3 +1,4 @@
+import { REMOTE_URL } from 'constants';
 import useWebSocket from 'react-use-websocket';
 import { useRef, useEffect, useState } from 'react';
 import { getChatRoomList, getMessageList } from 'apis/api';
@@ -16,7 +17,7 @@ const useChatWebSocket = () => {
     fetchData();
   }, [chatRoomId]);
 
-const socketUrl = 'ws://4.217.234.118:8000';
+  const socketUrl = `ws://${REMOTE_URL}:8000`;
 
   const [reconnectionAttempt, setReconnectionAttempt] = useState(0);
   const maxConnectionAttempts = 4;

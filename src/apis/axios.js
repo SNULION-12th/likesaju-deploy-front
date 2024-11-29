@@ -1,10 +1,10 @@
 // src/apis/axios.js
-
+import { REMOTE_URL } from 'constants';
 import axios from 'axios';
 import { getCookie, removeCookie } from '../utils/cookie';
 
 // baseURL, credential, 헤더 세팅
-axios.defaults.baseURL = 'http://4.217.234.118:8000/api';
+axios.defaults.baseURL = `http://${REMOTE_URL}:8000/api`;
 axios.defaults.withCredentials = true;
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.defaults.headers.common['X-CSRFToken'] = getCookie('csrftoken');
